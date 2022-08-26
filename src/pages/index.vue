@@ -1,7 +1,12 @@
 <script setup lang="ts">
+import { useTodoStore } from '~/store/todo'
+const userStore = useTodoStore()
 </script>
 
 <template>
+  <div text-3xl>
+    {{ userStore.text }}
+  </div>
   <n-space>
     <n-button>Default</n-button>
     <n-button type="tertiary">
