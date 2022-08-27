@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
 
 export const useTodoStore = defineStore('todo', () => {
-  const text = 'Hello World!'
+  const title = '待办列表'
 
   return {
-    text,
+    title,
   }
 })
