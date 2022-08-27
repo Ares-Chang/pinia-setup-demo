@@ -4,28 +4,13 @@ const userStore = useTodoStore()
 </script>
 
 <template>
-  <div text-3xl>
+  <div text-3xl text-center>
     {{ userStore.text }}
   </div>
-  <n-space>
-    <n-button>Default</n-button>
-    <n-button type="tertiary">
-      Tertiary
+  <div flex justify-center>
+    <n-input />
+    <n-button type="primary" ghost>
+      搜索
     </n-button>
-    <n-button type="primary">
-      Primary
-    </n-button>
-    <n-button type="info">
-      Info
-    </n-button>
-    <n-button type="success">
-      Success
-    </n-button>
-    <n-button type="warning">
-      Warning
-    </n-button>
-    <n-button type="error">
-      Error
-    </n-button>
-  </n-space>
+  </div>
 </template>
