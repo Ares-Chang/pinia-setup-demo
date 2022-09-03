@@ -3,21 +3,26 @@ import { defineStore } from 'pinia'
 export const useTodoStore = defineStore('todo', () => {
   const title = ref('待办列表')
 
-  const dataList = ref([
+  const input = ref()
+
+  const dataList = $ref([
     {
-      title: '相见恨晚',
-      tag: ['暑夜', '晚春'],
-      info: '奋勇呀然后休息呀，完成你伟大的人生',
-    },
-    {
-      title: '他在时间门外',
-      tag: ['环形公路', '潜水艇司机'],
-      info: '最新的打印机，复制着彩色傀儡，早上好我的罐头先生，让他带你去被工厂敲击',
+      info: '输入内容，添加备忘，然后永远忘记。。。',
+      time: '2022-09-03 20:49:07',
     },
   ])
 
+  function handleClick() {
+    dataList.push({
+      info: input.value,
+      time: useDateFormat(new Date(), 'YYYY-MM-DD HH:mm:ss').value,
+    })
+  }
+
   return {
     title,
+    value: input,
+    handleClick,
     dataList,
   }
 })
