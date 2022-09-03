@@ -26,7 +26,7 @@ const { title, value, dataList } = storeToRefs(store)
   </div>
   <n-scrollbar max-h-75vh trigger="none">
     <n-list v-if="dataList.length" hoverable clickable bordered>
-      <n-list-item v-for="(item, index) in dataList" :key="index">
+      <n-list-item v-for="item in dataList" :key="item.id">
         <n-thing :title="item.info" content-style="margin-top: 10px;">
           <template #header-extra>
             {{ item.time }}
