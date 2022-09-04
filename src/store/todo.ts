@@ -22,10 +22,15 @@ export const useTodoStore = defineStore('todo', () => {
     })
   }
 
+  function handleRemove(index: number) {
+    dataList.splice(index, 1)
+  }
+
   return {
     title,
     value: input,
-    handleClick,
     dataList,
+    handleClick,
+    handleRemove,
   }
 })
