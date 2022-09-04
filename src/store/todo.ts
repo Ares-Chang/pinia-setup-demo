@@ -6,7 +6,12 @@ export const useTodoStore = defineStore('todo', () => {
 
   const input = ref()
 
-  const dataList = $ref([
+  interface TodoInfo {
+    id: string
+    info: string
+    time: string
+  }
+  const dataList = $ref<TodoInfo[]>([
     {
       id: 'default',
       info: '输入内容，添加备忘，然后永远忘记。。。',
