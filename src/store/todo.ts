@@ -20,6 +20,7 @@ export const useTodoStore = defineStore('todo', () => {
       info: input.value,
       time: useDateFormat(new Date(), 'YYYY-MM-DD HH:mm:ss').value,
     })
+    input.value = ''
   }
 
   function handleRemove(index: number) {
