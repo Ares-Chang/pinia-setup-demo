@@ -8,7 +8,7 @@ export const useTodoStore = defineStore('todo', () => {
 
   const dataList = $ref([
     {
-      id: nanoid(),
+      id: 'default',
       info: '输入内容，添加备忘，然后永远忘记。。。',
       time: '2022-09-03 20:49:07',
     },
@@ -16,7 +16,7 @@ export const useTodoStore = defineStore('todo', () => {
 
   function handleClick() {
     dataList.push({
-      id: 'default',
+      id: nanoid(),
       info: input.value,
       time: useDateFormat(new Date(), 'YYYY-MM-DD HH:mm:ss').value,
     })
