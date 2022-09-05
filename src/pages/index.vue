@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
+import type { InputInst } from 'naive-ui'
 import { useTodoStore } from '~/store/todo'
 const store = useTodoStore()
 // storeToRefs 只会返回响应式变量
 const { title, value, count, dataList } = storeToRefs(store)
 const time = computed(() => useDateFormat(useNow(), 'YYYY-MM-DD HH:mm:ss').value)
+
+const inputRef = $ref<InputInst | null>(null)
+function handleAdd() {
+  inputRef?.focus()
+}
 </script>
 
 <template>
@@ -13,6 +19,7 @@ const time = computed(() => useDateFormat(useNow(), 'YYYY-MM-DD HH:mm:ss').value
   </div>
   <div w="90%" ma flex justify-center my-5 gap-2>
     <n-input
+      ref="inputRef"
       v-model:value="value"
       type="textarea"
       size="large"
@@ -52,7 +59,7 @@ const time = computed(() => useDateFormat(useNow(), 'YYYY-MM-DD HH:mm:ss').value
       <div min-h-60 h-full flex justify-center items-center>
         <n-empty description="你什么也没有哦~" size="large">
           <template #extra>
-            <n-button size="small">
+            <n-button size="small" @click="handleAdd">
               点击添加一条
             </n-button>
           </template>

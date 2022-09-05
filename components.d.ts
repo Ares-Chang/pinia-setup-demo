@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     NInputGroup: typeof import('naive-ui')['NInputGroup']
     NList: typeof import('naive-ui')['NList']
     NListItem: typeof import('naive-ui')['NListItem']
+    NMessageProvider: typeof import('naive-ui')['NMessageProvider']
     NScrollbar: typeof import('naive-ui')['NScrollbar']
     NSpace: typeof import('naive-ui')['NSpace']
     NTag: typeof import('naive-ui')['NTag']
