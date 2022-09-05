@@ -10,7 +10,7 @@ const { title, value, dataList } = storeToRefs(store)
   <div text-3xl text-center mt3>
     {{ title }}
   </div>
-  <div w-5xl ma flex justify-center my-5 gap-2>
+  <div w="90%" ma flex justify-center my-5 gap-2>
     <n-input
       v-model:value="value"
       type="textarea"
