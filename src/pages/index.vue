@@ -3,7 +3,8 @@ import { storeToRefs } from 'pinia'
 import { useTodoStore } from '~/store/todo'
 const store = useTodoStore()
 // storeToRefs 只会返回响应式变量
-const { title, value, dataList } = storeToRefs(store)
+const { title, value, count, dataList } = storeToRefs(store)
+const time = computed(() => useDateFormat(useNow(), 'YYYY-MM-DD HH:mm:ss').value)
 </script>
 
 <template>
@@ -23,6 +24,14 @@ const { title, value, dataList } = storeToRefs(store)
     <n-button type="primary" ghost size="large" @click="store.handleClick">
       添加
     </n-button>
+  </div>
+  <div flex justify-center my-5 gap-2>
+    <n-tag type="success" size="large">
+      count: {{ count }}
+    </n-tag>
+    <n-tag type="info" size="large">
+      time: {{ time }}
+    </n-tag>
   </div>
   <n-scrollbar max-h-75vh trigger="none">
     <n-list v-if="dataList.length" hoverable clickable bordered>

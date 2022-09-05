@@ -19,6 +19,8 @@ export const useTodoStore = defineStore('todo', () => {
     },
   ])
 
+  const count = computed(() => dataList.length)
+
   function handleClick() {
     dataList.push({
       id: nanoid(),
@@ -35,6 +37,7 @@ export const useTodoStore = defineStore('todo', () => {
   return {
     title,
     value: input,
+    count,
     dataList,
     handleClick,
     handleRemove,
