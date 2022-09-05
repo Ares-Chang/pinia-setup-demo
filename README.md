@@ -8,9 +8,9 @@
 
 - TS 支持
 
-- Pinia setup 写法
+- [Pinia setup 写法](https://pinia.vuejs.org/cookbook/composables.html)
 
-- Use Naive UI 
+- [Use Naive UI](https://www.naiveui.com/zh-CN/os-theme)
 
 - 支持 dark 模式
 
